@@ -7,7 +7,7 @@ before:
     - go mod download
 builds:
   - main: .
-    binary: health-ftp
+    binary: controller-for-k8s
     ldflags:
       - -s -w
       - -X github.com/prometheus/common/version.Version={{.Version}}

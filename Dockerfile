@@ -2,6 +2,12 @@
 FROM golang:1.15.1-buster as builder
 
 WORKDIR /workspace
+# For building Go Module required
+ENV GOPROXY=direct
+ENV GO111MODULE=on
+ENV GOARCH=amd64
+ENV GOOS=linux
+ENV CGO_ENABLED=0
 # Copy the Go Modules manifests
 COPY go.mod go.mod
 COPY go.sum go.sum
@@ -15,7 +21,13 @@ COPY api/ api/
 COPY controllers/ controllers/
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=on go build -a -o manager main.go
+RUN go build -a -o manager -ldflags "-s -w \
+-X github.com/prometheus/common/version.Version=$(git describe --tags --abbrev=0) \
+-X github.com/prometheus/common/version.BuildDate=$(date +%FT%T%z) \
+-X github.com/prometheus/common/version.Branch=master \
+-X github.com/prometheus/common/version.Revision=$(git rev-parse --short HEAD) \
+-X github.com/prometheus/common/version.BuildUser=transnano" \
+main.go
 
 # Use distroless as minimal base image to package the manager binary
 # Refer to https://github.com/GoogleContainerTools/distroless for more details
