@@ -24,6 +24,8 @@ make
 
 ```sh
 $ make install
+$ make run
+$ kubectl apply -f config/samples/
 ```
 
 ```sh
@@ -38,10 +40,6 @@ guestbooks.webapp.my.domain                      2020-09-07T12:56:01Z
 ```sh
 $ kubectl create namespace controller-for-k8s-sample-system
 $ make deploy IMG=transnano/controller-for-k8s-sample:latest
-```
-
-```sh
-$ make run
 ```
 
 ```sh
