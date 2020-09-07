@@ -1,0 +1,32 @@
+project_name: controller-for-k8s-sample
+env:
+  - GO111MODULE=on
+before:
+  hooks:
+    - go mod tidy
+    - go mod download
+builds:
+  - main: .
+    binary: health-ftp
+    ldflags:
+      - -s -w
+      - -X github.com/prometheus/common/version.Version={{.Version}}
+      - -X github.com/prometheus/common/version.BuildDate={{.Date}}
+      - -X github.com/prometheus/common/version.Branch=master
+      - -X github.com/prometheus/common/version.Revision={{.ShortCommit}}
+      - -X github.com/prometheus/common/version.BuildUser=transnano
+    env:
+      - CGO_ENABLED=0
+archives:
+  - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+    replacements:
+      darwin: darwin
+      linux: linux
+      windows: windows
+      386: i386
+      amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
+release:
+  prerelease: auto
