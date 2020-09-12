@@ -73,6 +73,12 @@ ENV GO111MODULE=auto
 
 # [Optional] Uncomment the next line to use go get to install anything else you need
 # RUN go get -x <your-dependency-or-tool>
+ARG KBVER=2.3.1
+RUN os=$(go env GOOS) \
+    && arch=$(go env GOARCH) \
+    && curl -L https://go.kubebuilder.io/dl/${KBVER}/${os}/${arch} | tar -xz -C /tmp/ \
+    && mv /tmp/kubebuilder_${KBVER}_${os}_${arch} /usr/local/kubebuilder
+ENV PATH $PATH:/usr/local/kubebuilder/bin
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update \
