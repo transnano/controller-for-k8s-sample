@@ -11,6 +11,10 @@
 
 See the  [Getting Started](https://book.kubebuilder.io/quick-start.html)  documentation.
 
+## Overview
+
+<img src="./overview.drawio.svg">
+
 ## Demo
 
 Download [Kustomize(Binaries)](https://kubernetes-sigs.github.io/kustomize/installation/binaries/)
@@ -39,6 +43,21 @@ guestbooks.webapp.my.domain                      2020-09-07T12:56:01Z
 
 ```sh
 $ kubectl create namespace controller-for-k8s-sample-system
+```
+
+or
+
+```sh
+$ cat my-namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: controller-for-k8s-sample-system
+
+$ kubectl create -f ./my-namespace.yaml
+```
+
+```sh
 $ make deploy IMG=transnano/controller-for-k8s-sample:latest
 ```
 
@@ -60,5 +79,10 @@ NAME                                           READY   UP-TO-DATE   AVAILABLE   
 controller-for-k8s-sample-controller-manager   1/1     1            1           13m
 ```
 
+### Extra
 
+```sh
+kubectl api-resources --namespaced=true
+kubectl api-resources --namespaced=false
+```
 
