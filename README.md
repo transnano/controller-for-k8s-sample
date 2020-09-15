@@ -82,7 +82,10 @@ controller-for-k8s-sample-controller-manager   1/1     1            1           
 ### Extra
 
 ```sh
-kubectl api-resources --namespaced=true
-kubectl api-resources --namespaced=false
+$ kubectl api-resources --namespaced=true
+$ kubectl api-resources --namespaced=false
 ```
 
+```sh
+$ kubectl get all
+```
