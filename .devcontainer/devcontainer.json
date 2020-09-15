@@ -16,15 +16,16 @@
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "Compulim.vscode-clock",
+    "donjayamanne.githistory",
     "eamodio.gitlens",
+    "esbenp.prettier-vscode",
     "GitHub.vscode-pull-request-github",
     "golang.go",
+    "hediet.vscode-drawio",
     "ms-azuretools.vscode-docker",
-    "shardulm94.trailing-spaces",
     "redhat.vscode-yaml",
-    "esbenp.prettier-vscode",
-    "donjayamanne.githistory",
-    "hediet.vscode-drawio"
+    "shardulm94.trailing-spaces",
+    "shuworks.vscode-table-formatter"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
