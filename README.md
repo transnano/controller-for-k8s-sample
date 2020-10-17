@@ -1,4 +1,4 @@
-# controller-for-k8s-sample ![Releases](https://github.com/transnano/controller-for-k8s-sample/workflows/Releases/badge.svg) ![Publish Docker image](https://github.com/transnano/controller-for-k8s-sample/workflows/Publish%20Docker%20image/badge.svg) ![Vulnerability Scan](https://github.com/transnano/controller-for-k8s-sample/workflows/Vulnerability%20Scan/badge.svg)
+# controller-for-k8s-sample ![Releases](https://github.com/transnano/controller-for-k8s-sample/workflows/Releases/badge.svg) ![Publish Docker image](https://github.com/transnano/controller-for-k8s-sample/workflows/Publish%20Docker%20image/badge.svg) ![Vulnerability Scan](https://github.com/transnano/controller-for-k8s-sample/workflows/Vulnerability%20Scan/badge.svg) ![Code Scanning(CodeQL)](https://github.com/transnano/controller-for-k8s-sample/workflows/Code%20Scanning(CodeQL)/badge.svg)
 
 ![License](https://img.shields.io/github/license/transnano/controller-for-k8s-sample?style=flat)
 
