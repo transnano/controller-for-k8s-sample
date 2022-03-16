@@ -1,5 +1,5 @@
 # Build the manager binary
-FROM golang:1.17.8-buster as builder
+FROM golang:1.18.0-buster as builder
 
 WORKDIR /workspace
 # For building Go Module required
