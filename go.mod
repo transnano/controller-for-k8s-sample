@@ -1,6 +1,6 @@
 module github.com/transnano/controller-for-k8s-sample
 
-go 1.13
+go 1.19
 
 require (
 	github.com/go-logr/logr v1.2.3
