@@ -3,7 +3,7 @@ module github.com/transnano/controller-for-k8s-sample
 go 1.13
 
 require (
-	github.com/go-logr/logr v1.2.3
+	github.com/go-logr/logr v1.4.2
 	github.com/onsi/ginkgo/v2 v2.7.0
 	github.com/onsi/gomega v1.24.2
 	k8s.io/apimachinery v0.26.0
